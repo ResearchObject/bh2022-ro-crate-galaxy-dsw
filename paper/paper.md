@@ -14,8 +14,20 @@ authors:
   - name: Marek Suchánek 
     orcid: 0000-0001-7525-9218
     affiliation: 2
+  - name: Paul De Geest
+    orcid: 0000-0002-8940-4946
+    affiliation: 1
+  - name: Bjorn Gruning
+#  - name: Nicola Soranzo
+#  - name: Vojtech Knaisl
+#  - name: Jan Slifka
+#  - name: David Salgado
+#  - name: David López
+  - name: Simone Leo
+#  - name: Alban Gaignard
+#  - name: Paulette Lieby
   - name: Stian Soiland-Reyes
-    affiliation: [5, 6]
+    affiliation: [15, 16]
     orcid: 0000-0001-9842-9718
 affiliations:
   - name: VIB-UGent Center for Plant Systems Biology, BE
@@ -23,9 +35,9 @@ affiliations:
   - name: Czech Technical University in Prague, Prague, CZ 
     index: 2
   - name: Department of Computer Science, The University of Manchester, Manchester, UK
-    index: 5
+    index: 15
   - name: Informatics Institute, University of Amsterdam, Amsterdam, NL
-    index: 6
+    index: 16
 date: 11 November 2022
 cito-bibliography: paper.bib
 event: BH22EU

@@ -83,25 +83,15 @@ Lists can be added with:
 You can use CiTO annotations, as explained in [this BioHackathon Europe 2021 write up](https://raw.githubusercontent.com/biohackrxiv/bhxiv-metadata/main/doc/elixir_biohackathon2021/paper.md) and [this CiTO Pilot](https://www.biomedcentral.com/collections/cito).
 Using this template, you can cite an article and indicate why we cite that article about DisGeNET-RDF [@citesAsAuthority:Queralt2016].
 
-Possible CiTO typing annotation include:
-
-* citesAsDataSource: when you point the reader to a source of data which may explain a claim
-* usesDataFrom: when you reuse somehow (and elaborate on) the data in the cited entity
-* usesMethodIn
-* citesAsAuthority
-* discusses
-* extends
-* agreesWith
-* disagreesWith
 
 Some citations we may want to add to text: 
 
 * RO-Crate [@citesAsDataSource:10.3233/ds-210053]
 * RO-Crate progress [@extends:10.3897/rio.8.e93937]
 * Workflow Run in Galaxy [@usesMethodIn:10.3897/rio.8.e95164]
-* Galaxy/CWFR [@discusses:10.1162/dint_a_00136]
+* Galaxy/CWFR [@citesAsRecommendedReading:10.1162/dint_a_00136]
 * Galaxy [@citesAsDataSource:10.1093/nar/gky379]
-* Software management plans [@discusses:10.3897/rio.8.e94608]
+* Software management plans [@citesAsRecommendedReading:10.3897/rio.8.e94608]
 * Data Stewardship Wizard [@citesAsDataSource:10.5334/dsj-2019-059] 
 * DSW at BH2020 [@extends:10.37044/osf.io/9mnkb]
 

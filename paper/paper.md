@@ -57,19 +57,19 @@ Please keep sections to a maximum of only two levels.
 
 Tables can be added in the following way, though alternative are possible:
 
-Table 1
-
 | Header 1 | Header 2 |
 | -------- | -------- |
 | item 1 | item 2 |
 | item 3 | item 4 |
 
+Table: A test of tables
+
 Tables and figures should be given before the are mentioned in the main text.
 A figure is added with:
 
 ![BioHackrXiv logo](./biohackrxiv.png)
- 
-Figure 1. The BioHackrXiv logo.
+
+Figure: IS it though
 
 # Other main section on your manuscript level 1
 

@@ -24,6 +24,8 @@ authors:
 #  - name: David Salgado
 #  - name: David López
   - name: Simone Leo
+    affiliation: 17
+    orcid: 0000-0001-8271-5429
 #  - name: Alban Gaignard
 #  - name: Paulette Lieby
   - name: Stian Soiland-Reyes
@@ -38,6 +40,8 @@ affiliations:
     index: 15
   - name: Informatics Institute, University of Amsterdam, Amsterdam, NL
     index: 16
+  - name: Center for Advanced Studies, Research and Development in Sardinia (CRS4), Pula (CA), IT
+  - index: 17
 date: 11 November 2022
 cito-bibliography: paper.bib
 event: BH22EU

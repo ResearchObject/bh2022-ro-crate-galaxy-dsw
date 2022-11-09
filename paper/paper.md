@@ -14,6 +14,9 @@ authors:
   - name: Marek Suchánek 
     orcid: 0000-0001-7525-9218
     affiliation: 2
+  - name: Vojtěch Knaisl
+    orcid: 0000-0003-0103-8468
+    affiliation: 2
   - name: Paul De Geest
     orcid: 0000-0002-8940-4946
     affiliation: 1

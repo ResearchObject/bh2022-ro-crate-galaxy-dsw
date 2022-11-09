@@ -60,33 +60,6 @@ authors_short: Ignacio Eguinoa, Marek Suchánek \emph{et al.}
 ---
 
 
-# Introduction
-
-As part of the BioHackathon Europe 2022, we here report...
-
-# Formatting
-
-This document use Markdown and you can look at [this tutorial](https://www.markdowntutorial.com/).
-
-## Subsection level 2
-
-Please keep sections to a maximum of only two levels.
-
-## Tables and figures
-
-Tables can be added in the following way, though alternative are possible:
-
-| Header 1 | Header 2 |
-| -------- | -------- |
-| item 1 | item 2 |
-| item 3 | item 4 |
-
-Table: A test of tables
-
-Tables and figures should be given before the are mentioned in the main text.
-A figure is added with:
-
-![BioHackrXiv logo](./biohackrxiv.png)
 
 ## runcrate
 
@@ -100,12 +73,6 @@ A figure is added with:
 ## Importing RO-Crate in Galxay
 
 
-# Other main section on your manuscript level 1
-
-Lists can be added with:
-
-1. Item 1
-2. Item 2
 
 # Citation Typing Ontology annotation
 
@@ -133,6 +100,6 @@ Some citations we may want to add to text:
 
 ## Acknowledgements
 
-...
+We acknowledge funding from European Commission contracts [824087](https://doi.org/10.3030/824087) (EOSC-Life), [101046203](https://doi.org/10.3030/101046203) (BY-COVID), [101057388](https://doi.org/10.3030/101057388) (EuroScienceGateway). The Biohackathon was supported by [ELIXIR](https://elixir-europe.org/), the research infrastructure for life-science data. 
 
 ## References

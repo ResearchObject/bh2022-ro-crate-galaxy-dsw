@@ -88,11 +88,23 @@ Possible CiTO typing annotation include:
 * citesAsDataSource: when you point the reader to a source of data which may explain a claim
 * usesDataFrom: when you reuse somehow (and elaborate on) the data in the cited entity
 * usesMethodIn
-* citesAsAuthorit
+* citesAsAuthority
 * discusses
 * extends
 * agreesWith
 * disagreesWith
+
+Some of our citations:
+
+* RO-Crate [@citesAsDataSource:doi:10.3233/ds-210053]
+* RO-Crate progress [@extends:doi:10.3897/rio.8.e93937]
+* Workflow Run in Galaxy [@usesMethodIn:doi:10.3897/rio.8.e95164]
+* Galaxy/CWFR [@discusses:doi:10.1162/dint_a_00136]
+* Galaxy [@citesAsDataSource:doi:10.1093/nar/gky379]
+* Software management plans [@discusses:doi:10.3897/rio.8.e94608]
+* Data Stewardship Wizard [@citesAsDataSource:doi:10.5334/dsj-2019-059] 
+* DSW at BH2020 [@extends:doi:10.37044/osf.io/9mnkb]
+
 
 # Results
 

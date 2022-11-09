@@ -1,5 +1,5 @@
 ---
-title: 'BioHackEU22 Report for Project 10: Enhance RDM in Galaxy and DSW by utilising RO-Crates'
+title: 'BioHackEU22 Report: Enhancing Research Data MAnagement in Galaxy and Data Stewardship Wizard by utilising RO-Crates'
 title_short: 'BioHackEU22 #10: RDM in Galaxy and DSW w/ RO-Crate'
 tags:
   - workflow
@@ -8,36 +8,36 @@ tags:
   - Data Management Plan
   - DMP
 authors:
-  - name: Stian Soiland-Reyes
-    affiliation: [1, 2]
-    orcid: 0000-0001-9842-9718
   - name: Ignacio Eguinoa
     orcid: 0000-0002-6190-122X
-    affiliation: 3
+    affiliation: 1
   - name: Marek Suchánek 
     orcid: 0000-0001-7525-9218
-    affiliation: 4
+    affiliation: 2
+  - name: Stian Soiland-Reyes
+    affiliation: [5, 6]
+    orcid: 0000-0001-9842-9718
 affiliations:
-  - name: Department of Computer Science, The University of Manchester, Manchester, UK
-    index: 1
-  - name: Informatics Institute, University of Amsterdam, Amsterdam, NL
-    index: 2
   - name: VIB-UGent Center for Plant Systems Biology, BE
-    index: 3
+    index: 1
   - name: Czech Technical University in Prague, Prague, CZ 
-    index: 4
+    index: 2
+  - name: Department of Computer Science, The University of Manchester, Manchester, UK
+    index: 5
+  - name: Informatics Institute, University of Amsterdam, Amsterdam, NL
+    index: 6
 date: 11 November 2022
 cito-bibliography: paper.bib
 event: BH22EU
 biohackathon_name: "BioHackathon Europe 2022"
 biohackathon_url:   "https://biohackathon-europe.org/"
 biohackathon_location: "Paris, France, 2022"
-group: Enhance RDM in Galaxy and DSW by utilising RO-Crates
+group: '#10: Enhance RDM in Galaxy and DSW by utilising RO-Crates'
 # URL to project git repo --- should contain the actual paper.md:
 git_url: https://github.com/ResearchObject/bh2022-ro-crate-galaxy-dsw
 # This is the short authors description that is used at the
 # bottom of the generated paper (typically the first two authors):
-authors_short: Stian Soiland-Reyes \emph{et al.}
+authors_short: Ignacio Eguinoa, Marek Suchánek \emph{et al.}
 ---
 
 

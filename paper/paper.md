@@ -94,7 +94,7 @@ Possible CiTO typing annotation include:
 * agreesWith
 * disagreesWith
 
-Some of our citations:
+Some citations we may want to add to text: 
 
 * RO-Crate [@citesAsDataSource:10.3233/ds-210053]
 * RO-Crate progress [@extends:10.3897/rio.8.e93937]
@@ -104,7 +104,6 @@ Some of our citations:
 * Software management plans [@discusses:10.3897/rio.8.e94608]
 * Data Stewardship Wizard [@citesAsDataSource:10.5334/dsj-2019-059] 
 * DSW at BH2020 [@extends:10.37044/osf.io/9mnkb]
-
 
 # Results
 

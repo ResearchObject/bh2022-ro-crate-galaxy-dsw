@@ -58,6 +58,7 @@ Please keep sections to a maximum of only two levels.
 Tables can be added in the following way, though alternative are possible:
 
 Table 1
+
 | Header 1 | Header 2 |
 | -------- | -------- |
 | item 1 | item 2 |

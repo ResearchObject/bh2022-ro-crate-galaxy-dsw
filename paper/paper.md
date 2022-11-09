@@ -1,5 +1,5 @@
 ---
-title: 'BioHackEU22 Report: Enhancing Research Data MAnagement in Galaxy and Data Stewardship Wizard by utilising RO-Crates'
+title: 'BioHackEU22 Report: Enhancing Research Data Management in Galaxy and Data Stewardship Wizard by utilising RO-Crates'
 title_short: 'BioHackEU22 #10: RDM in Galaxy and DSW w/ RO-Crate'
 tags:
   - workflow
@@ -81,7 +81,17 @@ A figure is added with:
 
 ![BioHackrXiv logo](./biohackrxiv.png)
 
-Figure: IS it though
+## runcrate
+
+## Provenance export of workflow runs from Galaxy
+
+## RO-Crate in DSW
+
+- Mapping
+- Thoughts on import/generation
+
+## Importing RO-Crate in Galxay
+
 
 # Other main section on your manuscript level 1
 

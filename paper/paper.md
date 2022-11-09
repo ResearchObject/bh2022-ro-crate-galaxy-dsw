@@ -100,6 +100,6 @@ Some citations we may want to add to text:
 
 ## Acknowledgements
 
-We acknowledge funding from European Commission contracts [824087](https://doi.org/10.3030/824087) (EOSC-Life), [101046203](https://doi.org/10.3030/101046203) (BY-COVID), [101057388](https://doi.org/10.3030/101057388) (EuroScienceGateway). The Biohackathon was supported by [ELIXIR](https://elixir-europe.org/), the research infrastructure for life-science data. 
+We acknowledge funding from European Commission under contracts [824087](https://doi.org/10.3030/824087) (EOSC-Life), [101046203](https://doi.org/10.3030/101046203) (BY-COVID), [101057388](https://doi.org/10.3030/101057388) (EuroScienceGateway). The Biohackathon was supported by [ELIXIR](https://elixir-europe.org/), the research infrastructure for life-science data.  The operation and development of Data Stewardship Wizard is supported by ELIXIR CZ research infrastructure (MŠMT Grant No.: [LM2018131](https://starfos.tacr.cz/en/project/LM2018131)).
 
 ## References

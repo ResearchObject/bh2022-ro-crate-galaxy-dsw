@@ -75,8 +75,29 @@ This project benefitted largely from collaborations with other Biohackathon proj
 
 # Ambitions
 
+_From Wed Slide_
+
+## Updated aims
+
+* Include improved import flow in DSW
+* Plan the implementation of RO-Crate import in Galaxy.
+* Implement exporting of a detailed workflow execution from Galaxy.
 
 
+## Progress
+
+* Work on the automated build pipeline for runcrate ( @Simone (remote participant)
+* DSW RO-Crate mapped, export & import: project metadata, dataset metadata will follow
+* Possible implementations for RO-Crate import @all
+* Progress on exporting feature. @Paul and @David
+
+# Help
+
+Use cases: Anyone making use of RO-Crate that wants them to be imported into Galaxy and DSW.
+
+Offtopic:
+- Helm Chart (for DSW)
+- DSW UI Translations
 
 ## runcrate
 

@@ -59,6 +59,23 @@ git_url: https://github.com/ResearchObject/bh2022-ro-crate-galaxy-dsw
 authors_short: Ignacio Eguinoa, Marek Suchánek \emph{et al.}
 ---
 
+# Background
+
+[RO-Crate] [@citesAsDataSource:10.3233/ds-210053] is a generic packaging format containing datasets and their description using standards for FAIR Linked Data. Based on rich schema.org metadata, such datasets can be interpreted as workflow definitions, datasets, data associated with workflow invocations, inputs, outputs, etc.
+
+The Galaxy workflow framework [@citesAsDataSource:10.1093/nar/gky379] is handling all of those objects and supports users in the daily RDM. Integrating RO-Crate deeply into Galaxy and offering import and export options of various Galaxy objects as Research Objects will greatly standardize and improve the RDM in Galaxy and smoothen the UX as well as improving interoperability with other systems.
+
+The low hanging fruit of this proposal is to add support for import/export of RO-Crates following its Workflow profiles [@usesMethodIn:10.3897/rio.8.e95164]. Those Crates should contain as much metadata as the Galaxy framework can provide. This includes workflow metadata such as Licence, Creator, CWL-abstract description, workflow history, contextually also references (DOIs, bio.tool IDs), EDAM terms, and formats of inputs/outputs of data processing of each step of the workflow.
+
+Exports of History and Workflow Invocations need work on the corresponding RO-Crate profile and on the Galaxy codebase. RO-Crates already can be visualized, this would add a human-readable HTML rendering of the Galaxy export and metadata. Close collaboration between RO-Crate and Galaxy developers will speed up this development; the groundwork could be completed during the Biohackathon so that both Crates will be supported by the Galaxy 23.01 release.
+
+Data Stewardship Wizard (DSW) [@citesAsDataSource:10.5334/dsj-2019-059] is a tool for data management planning with focus on FAIR metrics, proper guidance and integration with other tools in the data stewardship domain. Thus, similarly to utilising RO-Crates in Galaxy, the import and export functionality would be highly beneficial for DSW in terms of promoting interoperability and FAIRness in general. Existing RO-Crates can be used to pre-fill specific parts of DMPs, and vice versa, RO-Crates can be created or initiated from a DMP. Such support of RO-Crates in DSW can lay a foundation for closer integration with Galaxy and potentially other ELIXIR Tools platform components.
+
+This project benefitted largely from collaborations with other Biohackathon projects such as “#25: Scientific and technical enhancement of bioinformatics software metadata using the Tools Ecosystem open infrastructure” as they are also leveraging workflow and software metadata from the same resources,  “#22: Plant data exchange and standard interoperability” which are combining the standards MIAPPE, ISA and RO-Crate for describing plant studies and data, 
+
+# Ambitions
+
+
 
 
 ## runcrate
@@ -82,13 +99,9 @@ Using this template, you can cite an article and indicate why we cite that artic
 
 Some citations we may want to add to text: 
 
-* RO-Crate [@citesAsDataSource:10.3233/ds-210053]
 * RO-Crate progress [@extends:10.3897/rio.8.e93937]
-* Workflow Run in Galaxy [@usesMethodIn:10.3897/rio.8.e95164]
 * Galaxy/CWFR [@citesAsRecommendedReading:10.1162/dint_a_00136]
-* Galaxy [@citesAsDataSource:10.1093/nar/gky379]
 * Software management plans [@citesAsRecommendedReading:10.3897/rio.8.e94608]
-* Data Stewardship Wizard [@citesAsDataSource:10.5334/dsj-2019-059] 
 * DSW at BH2020 [@extends:10.37044/osf.io/9mnkb]
 
 # Results

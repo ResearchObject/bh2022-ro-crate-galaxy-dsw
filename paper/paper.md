@@ -102,6 +102,34 @@ Offtopic:
 - Helm Chart (for DSW)
 - DSW UI Translations
 
+# Outcomes
+
+_From Friday slides_
+
+- Moved the CWLProv converter to runcrate; configured package build and CI jobs. 
+- Prototype implementation of a workflow run RO-Crate from Galaxy.
+- Implementation plan for a general RO-Crate import module in Galaxy
+- Clarified Workflow Run profile requirements for WfExS (#29) and Sapporo (#35)
+- DSW can import/export basic RO-Crates as templates
+
+## Participation 
+
+- DSW team: Marek, Vojtěch, Jan, Paulette (virtual)
+- Galaxy export implementation: Paul and David
+- runcrate lead: Simone (virtual participant)
+- The brains behind RO-Crate: Stian & RO-Crate community
+- Thanks to teams Bioschemas (#5 #23 #25), workflow executions (#29 #35) Galaxy-CWL (#28) and MIAPPE (#22)!
+
+
+## Future work
+
+- Galaxy: Mature export prototype
+- Galaxy: Prototype RO-Crate import
+- DSW: express potential future actions (e.g. submitted Grants)
+- Improve RO-Crate profile documentation – what is the thinking process for extending RO-Crate?
+- runcrate: refactor, expand, document – use from wf engines 
+- Started draft BioHackrXiv – but when to finish it??
+
 ## runcrate
 
 ## Provenance export of workflow runs from Galaxy

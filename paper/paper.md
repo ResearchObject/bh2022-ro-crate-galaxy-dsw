@@ -25,14 +25,14 @@ authors:
     affiliation: 1
   - name: Bjorn Gruning
     orcid: 0000-0002-3079-6586
-    affiliation: [6,7]
+    affiliation: 6
 #  - name: Nicola Soranzo
 #  - name: Vojtech Knaisl
 #  - name: Jan Slifka
 #  - name: David Salgado
   - name: David López
     orcid: 0000-0002-9541-3961
-    affiliation: [6,7]
+    affiliation: 7
 - name: Simone Leo
     affiliation: 5
     orcid: 0000-0001-8271-5429

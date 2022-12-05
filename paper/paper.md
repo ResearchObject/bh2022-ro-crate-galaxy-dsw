@@ -25,21 +25,21 @@ authors:
     affiliation: 1
   - name: Bjorn Gruning
     orcid: 0000-0002-3079-6586
-    affiliation: 18
+    affiliation: 6
 #  - name: Nicola Soranzo
 #  - name: Vojtech Knaisl
 #  - name: Jan Slifka
 #  - name: David Salgado
-#  - name: David López
-#    orcid: 
-#    affiliation: 18
-  - name: Simone Leo
-    affiliation: 17
+  - name: David López
+    orcid: 0000-0002-9541-3961
+    affiliation: 7
+- name: Simone Leo
+    affiliation: 5
     orcid: 0000-0001-8271-5429
 #  - name: Alban Gaignard
 #  - name: Paulette Lieby
   - name: Stian Soiland-Reyes
-    affiliation: [15, 16]
+    affiliation: [3, 4]
     orcid: 0000-0001-9842-9718
 affiliations:
   - name: VIB-UGent Center for Plant Systems Biology, BE
@@ -47,13 +47,15 @@ affiliations:
   - name: Czech Technical University in Prague, Prague, CZ 
     index: 2
   - name: Department of Computer Science, The University of Manchester, Manchester, UK
-    index: 15
+    index: 3
   - name: Informatics Institute, University of Amsterdam, Amsterdam, NL
-    index: 16
+    index: 4
   - name: Center for Advanced Studies, Research and Development in Sardinia (CRS4), Pula (CA), IT
-    index: 17
+  - index: 5
+  - name: Albert-Ludwigs-Universität Freiburg, Galaxy Freiburg Team, Freiburg, DE
+    index: 6
   - name: Department of Computer Science, University of Freiburg, Freiburg, DE 
-    index: 18
+    index: 7
 date: 11 November 2022
 cito-bibliography: paper.bib
 event: BH22EU

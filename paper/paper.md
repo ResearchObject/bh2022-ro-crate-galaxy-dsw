@@ -24,11 +24,15 @@ authors:
     orcid: 0000-0002-8940-4946
     affiliation: 1
   - name: Bjorn Gruning
+    orcid: 0000-0002-3079-6586
+    affiliation: 18
 #  - name: Nicola Soranzo
 #  - name: Vojtech Knaisl
 #  - name: Jan Slifka
 #  - name: David Salgado
 #  - name: David López
+#    orcid: 
+#    affiliation: 18
   - name: Simone Leo
     affiliation: 17
     orcid: 0000-0001-8271-5429
@@ -47,7 +51,9 @@ affiliations:
   - name: Informatics Institute, University of Amsterdam, Amsterdam, NL
     index: 16
   - name: Center for Advanced Studies, Research and Development in Sardinia (CRS4), Pula (CA), IT
-  - index: 17
+    index: 17
+  - name: Department of Computer Science, University of Freiburg, Freiburg, DE 
+    index: 18
 date: 11 November 2022
 cito-bibliography: paper.bib
 event: BH22EU

@@ -140,6 +140,11 @@ _From Friday slides_
 
 ## runcrate
 
+[Workflow Run RO-Crate](https://www.researchobject.org/workflow-run-crate/profiles/) is a collection of [RO-Crate profiles](https://www.researchobject.org/ro-crate/profiles.html) for capturing the provenance of the execution of computational workflows. To drive the development of the profile's specification, particularly for what concerns the internal details of each task execution, the working group developed a Python tool to convert CWLProv research object bundles [@discusses:10.3233/ds-210053] into Workflow Run RO-Crates. This tool was initially implemented as a single `cwlprov_to_crate.py` script hosted in a subfolder of the [Workflow Run RO-Crate GitHub repository](https://github.com/ResearchObject/workflow-run-crate). Though equipped with a command line interface and unit tests, the tool lacked a proper build setup and automated tests execution. Additionally, we wanted it to be ready for expansion into a generic software toolkit to manipulate Workflow Run RO-Crates, including the upcoming Galaxy history conversion feature.
+
+Part of the work in this project consisted of turning the `cwlprov_to_crate.py` standalone script into a properly maintained Python package called `runcrate`. We created the [runcrate repository](https://github.com/ResearchObject/runcrate) and moved the code there, turning it into the `rocrate` package; added a modern build configuration using `pyproject.toml` and `setup.cfg`; added a [Sphinx](https://www.sphinx-doc.org/en/master/)-based documentation setup; configured multiple [tox](https://tox.wiki/en/latest/) environments for linting, testing, building the package and the docs; configured a GitHub CI workflow to run the tox in multiple environments.
+
+
 ## Provenance export of workflow runs from Galaxy
 
 ## RO-Crate in DSW

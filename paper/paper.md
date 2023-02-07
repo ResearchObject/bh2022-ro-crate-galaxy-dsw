@@ -33,7 +33,7 @@ authors:
   - name: David López
     orcid: 0000-0002-9541-3961
     affiliation: 7
-- name: Simone Leo
+  - name: Simone Leo
     affiliation: 5
     orcid: 0000-0001-8271-5429
 #  - name: Alban Gaignard
@@ -85,6 +85,25 @@ Data Stewardship Wizard (DSW) [@citesAsDataSource:10.5334/dsj-2019-059] is a too
 This project benefitted largely from collaborations with other Biohackathon projects such as “#25: Scientific and technical enhancement of bioinformatics software metadata using the Tools Ecosystem open infrastructure” as they are also leveraging workflow and software metadata from the same resources,  “#22: Plant data exchange and standard interoperability” which are combining the standards MIAPPE, ISA and RO-Crate for describing plant studies and data, 
 
 # Ambitions
+
+_From Mon Slide_
+
+## Aims
+
+* Use RO-Crate to enhance Research Data Management for Galaxy workflows and Data Management Plans:
+  - Export detailed workflow provenance 
+  - Improve RO-Crate profile for execution details
+  - Explore using RO-Crate for Data Stewardship Wizard (DSW)
+
+
+## Expected outcomes
+
+* FAIR export of Galaxy history 
+* Prototype Galaxy import of RO-Crate
+* Conceptually mapping DSW & RO-Crate
+* Support RO-Crate import / export in DSW
+* Analyze DSW-Galaxy integration possibilities
+* First release of runcrate command line
 
 _From Wed Slide_
 
@@ -147,13 +166,20 @@ Part of the work in this project consisted of turning the `cwlprov_to_crate.py` 
 
 ## Provenance export of workflow runs from Galaxy
 
+The prototype workflow provenance export [feature](https://github.com/galaxyproject/galaxy/pull/15101) in Galaxy implements the [Workflow Run Crate Profile](https://www.researchobject.org/workflow-run-crate/profiles/workflow_run_crate) while including the individual steps in preparation for lifting the export to the more detailed [Provenance Run Crate Proile](https://www.researchobject.org/workflow-run-crate/profiles/provenance_run_crate). Additionally, the export feature includes Galaxy specific workflow attributes such as [dataset collections}(https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/collections/tutorial.html) and [workflow parameters](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/workflow-parameters/tutorial.html). Finally, this work also included setting up the necessary unit -, API - and integration tests.
+
 ## RO-Crate in DSW
 
 - Mapping
 - Thoughts on import/generation
 
-## Importing RO-Crate in Galxay
+## Importing RO-Crate in Galaxy
 
+The proposed implementation plan for a general RO-Crate import module in Galaxy consists of four parts: 1) Drag and Drop functionality for ro-crate's to be imported in Galaxy's GUI; 2) Detection of workflows and/or datasets and decide what to do with them; 3) Detect file types (fastq, images, txt, etc); 4) Allow the user to organise detected files within Galaxy's GUI.
+
+Questions that still need to be solved include: which datasets should be included in the import? Which datatypes do we allow (and do we validate filetypes)? Do we allow for multiple (nested) workflows and workflow runs to be imported? Do we preserve the RO-crate ID's? How do we account for missing tools in Galaxy?  
+
+Due to these types of issues we propose an optional guidance or hint file to inform Galaxy, via the [Galaxy rule-builder](https://training.galaxyproject.org/training-material/topics/galaxy-interface/tutorials/upload-rules/tutorial.html), how to organize the RO-crate's metadata (and data). Alternatively, [Gsuite](https://github.com/gtrack) and [fairtracks](https://github.com/fairtracks/fairtracks_standard) could represent and organize the RO-crate metadata. In this case we would need some kind of conversion for Galaxy tools to be able to use this metadata.
 
 
 # Citation Typing Ontology annotation
@@ -168,8 +194,6 @@ Some citations we may want to add to text:
 * Galaxy/CWFR [@citesAsRecommendedReading:10.1162/dint_a_00136]
 * Software management plans [@citesAsRecommendedReading:10.3897/rio.8.e94608]
 * DSW at BH2020 [@extends:10.37044/osf.io/9mnkb]
-
-# Results
 
 
 # Discussion

@@ -168,21 +168,17 @@ The prototype workflow provenance export [feature](https://github.com/galaxyproj
 
 ## RO-Crate in DSW
 
-In RO-Crates, metadata plays a crucial role in describing and providing context for research data, and a data management plan (DMP) outlines how data will be collected, processed, and preserved throughout the research project. The use of RO-Crate metadata can help ensure that DMPs are accurately and comprehensively informed. And vice versa, a DMP can be used to pre-populate an RO-Crate, i.e. creating a RO-Crate to be *filled* during the project. Thus, a transformation between RO-Crate and DMP can facilitate the creation and implementation of both. Therefore, combining RO-Crate with DMPs can enhance data management and sharing practices. DSW supports both import and export functionality for a specific format to be developed as standalone packages without need to change anything directly in the DSW codebase.
-
-*TODO: cite for relation between maDMP and RO-Crate 10.4126/FRL01-006423291*
+In RO-Crates, metadata plays a crucial role in describing and providing context for research data, and a data management plan (DMP) outlines how data will be collected, processed, and preserved throughout the research project. The use of RO-Crate metadata can help ensure that DMPs are accurately and comprehensively informed. This has been already investigated with use of machine-actionable DMPs (based on the RDA DMP Common Standard) [@citesAsDataSource:10.4126/FRL01-006423291]. And vice versa, a DMP can be used to pre-populate an RO-Crate, i.e. creating a RO-Crate to be *filled* during the project. Thus, a transformation between RO-Crate and DMP can facilitate the creation and implementation of both. Therefore, combining RO-Crate with DMPs can enhance data management and sharing practices. DSW supports both import and export functionality for a specific format to be developed as standalone packages without need to change anything directly in the DSW codebase.
 
 ### Mapping RO-Crate Metadata with KM
 
-As a first step, we needed to identify what metadata in RO-Crates are related to questions and answers in DSW questionnaires. The questions, answers, and other elements consituting the guidance are specified in so-called knowledge models (KMs). For data stewardship, we commonly use the [Common DSW Knowledge Model](https://registry.ds-wizard.org/knowledge-models/dsw:root:latest) initially based on the Rob Hooft's mindmap. We investigated the commonly used metadata in RO-Crates and tried to find corresponding questions in the KM, the matches were captured in a table containing a UUID of the target question. We covered the following entities and their properties:
+As a first step, we needed to identify what metadata in RO-Crates are related to questions and answers in DSW questionnaires. The questions, answers, and other elements consituting the guidance are specified in so-called knowledge models (KMs). For data stewardship, we commonly use the [Common DSW Knowledge Model](https://registry.ds-wizard.org/knowledge-models/dsw:root:latest) initially based on the Rob Hooft's mindmap [@citeAsDataSource:10.5281/zenodo.3351949]. We investigated the commonly used metadata in RO-Crates and tried to find corresponding questions in the KM, the matches were captured in a table containing a UUID of the target question. We covered the following entities and their properties:
 
 * project contributors (name, email, orcid, affiliation, roles),
 * project information (name, acronym, abstract, URL, start and end date, funding),
 * produced and published datasets (name, description, keywords, distrbutions, PIDs).
 
 That is, of course, a very limited portion of a DMP. However, it covers the most essential information that overlaps in both DMP and RO-Crate. We discussed several possibilities to include and distinguish different types of datasets (re-used, produced, published, etc.); however, in the end we decided to cover just those that are outputs of the project and should be present in an RO-Crate for such a research project.
-
-*TODO: cite mind map of Rob Hooft*
 
 ### Export RO-Crates from DSW
 
@@ -215,15 +211,13 @@ To export a project from DSW, one need to have a so-called *Document Template*. 
 
 Then we proceeded to create the document template itself with support of JSON-LD, HTML (for preview), and ZIP formats. The essential part is encoding the mapping described in the previous section. In `template.json.j2` file of the template, we encoded the mapping in Jinja to compose the RO-Crate metadata file (the JSON object and pretty-print it out in the file). This single file is then used for all three formats, either it is used directly, loaded in the HTML using `include` of Jinja, or added to a ZIP archive. The document template is compatible with knowledge models `dsw:root:2.4.4` / `dsw:lifesciences:2.4.4` (and higher). It is also distributed via the [DSW Registry](https://ds-wizard.org) and as open-source project via [GitHub.com/ds-wizard/ro-crate-template](https://github.com/ds-wizard/ro-crate-template).
 
-*TODO: figure? image49.png*
+![RO-Crate export options in DSW](./figures/dsw-ro-crate-export.png)
 
 ### Import RO-Crates to DSW
 
 For the opposite direction, i.e. to turn an existing RO-Crate (its metadata) in a DSW project, a project importer needs to be developed. Previously, we developed [RDA maDMP Importer](https://github.com/ds-wizard/dsw-madmp-importer) and [DSW Replies Importer](https://github.com/ds-wizard/dsw-replies-importer) using our [DSW Importer SDK](https://github.com/ds-wizard/dsw-importer-sdk). When user press the import button in DSW, a popup window is opened with the importer. There the importer may require various actions from the user, e.g. filling some form, interacting with other service, or typically loading a file. When the importer is ready, it can specify using the SDK API what replies should be loaded in the project and send them back to DSW, it closes the popup and imported replies can be reviewed in the DSW.
 
 During the hackathon we significantly improved the reviewing of imported replies. Initially, there was just an indication how many replies will be imported and how many errors occured. With the new one, user can se individual replies that are going to be added to the questionnaire and decide whether to finalize the import or not. For us as developers, this was a useful also for debugging purposes. Then, we developed the [DSW RO-Crate Importer](https://github.com/ds-wizard/dsw-ro-crate-importer) which encodes again the same mapping but queries the loaded JSON-LD file and if matching value is found, then it is turned into a reply for DSW.
-
-*TODO: figure?*
 
 ### Potential Future Development
 

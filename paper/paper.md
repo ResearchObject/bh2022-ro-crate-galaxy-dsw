@@ -27,8 +27,6 @@ authors:
     orcid: 0000-0002-3079-6586
     affiliation: 6
 #  - name: Nicola Soranzo
-#  - name: Vojtech Knaisl
-#  - name: Jan Slifka
 #  - name: David Salgado
   - name: David López
     orcid: 0000-0002-9541-3961
@@ -170,8 +168,62 @@ The prototype workflow provenance export [feature](https://github.com/galaxyproj
 
 ## RO-Crate in DSW
 
-- Mapping
-- Thoughts on import/generation
+In RO-Crates, metadata plays a crucial role in describing and providing context for research data, and a data management plan (DMP) outlines how data will be collected, processed, and preserved throughout the research project. The use of RO-Crate metadata can help ensure that DMPs are accurately and comprehensively informed. This has been already investigated with use of machine-actionable DMPs (based on the RDA DMP Common Standard) [@citesAsDataSource:10.4126/FRL01-006423291]. And vice versa, a DMP can be used to pre-populate an RO-Crate, i.e. creating a RO-Crate to be *filled* during the project. Thus, a transformation between RO-Crate and DMP can facilitate the creation and implementation of both. Therefore, combining RO-Crate with DMPs can enhance data management and sharing practices. DSW supports both import and export functionality for a specific format to be developed as standalone packages without need to change anything directly in the DSW codebase.
+
+### Mapping RO-Crate Metadata with KM
+
+As a first step, we needed to identify what metadata in RO-Crates are related to questions and answers in DSW questionnaires. The questions, answers, and other elements consituting the guidance are specified in so-called knowledge models (KMs). For data stewardship, we commonly use the [Common DSW Knowledge Model](https://registry.ds-wizard.org/knowledge-models/dsw:root:latest) initially based on the Rob Hooft's mindmap [@citeAsDataSource:10.5281/zenodo.3351949]. We investigated the commonly used metadata in RO-Crates and tried to find corresponding questions in the KM, the matches were captured in a table containing a UUID of the target question. We covered the following entities and their properties:
+
+* project contributors (name, email, orcid, affiliation, roles),
+* project information (name, acronym, abstract, URL, start and end date, funding),
+* produced and published datasets (name, description, keywords, distrbutions, PIDs).
+
+That is, of course, a very limited portion of a DMP. However, it covers the most essential information that overlaps in both DMP and RO-Crate. We discussed several possibilities to include and distinguish different types of datasets (re-used, produced, published, etc.); however, in the end we decided to cover just those that are outputs of the project and should be present in an RO-Crate for such a research project.
+
+### Export RO-Crates from DSW
+
+To export a project from DSW, one need to have a so-called *Document Template*. These document templates allows to retrieve all information about the project, its questionnaire with replies, and used knowledge model in order to transform it into any textual file. It is mainly using the [Jinja templating language](https://jinja.palletsprojects.com/en/3.1.x/) but has also other possible steps that can further convert or transform the generated document (or more generally, the artifact). First, as RO-Crates commonly use ZIP-packaging, we implemented a step in the document worker component that allows to archive a document created with Jinja in a ZIP (or TAR) archive. The `archive` step can be used as shown in the code example:
+
+```json
+{
+  "uuid": "b3c42edb-c858-4073-853e-751e75d8ee02",
+  "name": "Package (ZIP)",
+  "icon": "fas fa-file-archive",
+  "steps": [
+      {
+          "name": "jinja",
+          "options": {
+              "template": "src/template.json.j2",
+              "content-type": "application/json",
+              "extension": "json"
+          }
+      },
+      {
+          "name":"archive",
+          "options": {
+              "type": "zip",
+              "inputFileDst": "ro-crate-metadata.json"
+          }
+      }
+  ]
+}
+```
+
+Then we proceeded to create the document template itself with support of JSON-LD, HTML (for preview), and ZIP formats. The essential part is encoding the mapping described in the previous section. In `template.json.j2` file of the template, we encoded the mapping in Jinja to compose the RO-Crate metadata file (the JSON object and pretty-print it out in the file). This single file is then used for all three formats, either it is used directly, loaded in the HTML using `include` of Jinja, or added to a ZIP archive. The document template is compatible with knowledge models `dsw:root:2.4.4` / `dsw:lifesciences:2.4.4` (and higher). It is also distributed via the [DSW Registry](https://ds-wizard.org) and as open-source project via [GitHub.com/ds-wizard/ro-crate-template](https://github.com/ds-wizard/ro-crate-template).
+
+![RO-Crate export options in DSW](./figures/dsw-ro-crate-export.png)
+
+### Import RO-Crates to DSW
+
+For the opposite direction, i.e. to turn an existing RO-Crate (its metadata) in a DSW project, a project importer needs to be developed. Previously, we developed [RDA maDMP Importer](https://github.com/ds-wizard/dsw-madmp-importer) and [DSW Replies Importer](https://github.com/ds-wizard/dsw-replies-importer) using our [DSW Importer SDK](https://github.com/ds-wizard/dsw-importer-sdk). When user press the import button in DSW, a popup window is opened with the importer. There the importer may require various actions from the user, e.g. filling some form, interacting with other service, or typically loading a file. When the importer is ready, it can specify using the SDK API what replies should be loaded in the project and send them back to DSW, it closes the popup and imported replies can be reviewed in the DSW.
+
+During the hackathon we significantly improved the reviewing of imported replies. Initially, there was just an indication how many replies will be imported and how many errors occured. With the new one, user can se individual replies that are going to be added to the questionnaire and decide whether to finalize the import or not. For us as developers, this was a useful also for debugging purposes. Then, we developed the [DSW RO-Crate Importer](https://github.com/ds-wizard/dsw-ro-crate-importer) which encodes again the same mapping but queries the loaded JSON-LD file and if matching value is found, then it is turned into a reply for DSW.
+
+### Potential Future Development
+
+In the future, there is a need to increase the coverage of RO-Crate metadata both in import and export processes. This includes improving the detailed dataset information and funding information that can be included in the RO-Crate package (and vice versa). The ability to include more detailed dataset information will enhance the discoverability and reuse of research data. Additionally, including funding information will enable better tracking and attribution of the sources of support for research projects. We hope that this further development will be done in community manner as both document template for export and project importer for import are available as open-source projects enabling community contributions.
+
+Another area for future work is to support ZIP import in addition to JSON-LD import. This will provide more flexibility and ease of use for researchers who may be using a variety of tools and workflows to manage and share their research data. The ability to import RO-Crate packages in ZIP format will allow researchers to directly use their package. Overall, increasing the coverage of RO-Crate metadata and supporting ZIP import can help to facilitate the adoption and widespread use of RO-Crate in combination with DMPs.
 
 ## Importing RO-Crate in Galaxy
 
@@ -202,6 +254,6 @@ Some citations we may want to add to text:
 
 ## Acknowledgements
 
-We acknowledge funding from European Commission under contracts [824087](https://doi.org/10.3030/824087) (EOSC-Life), [101046203](https://doi.org/10.3030/101046203) (BY-COVID), [101057388](https://doi.org/10.3030/101057388) (EuroScienceGateway). The Biohackathon was supported by [ELIXIR](https://elixir-europe.org/), the research infrastructure for life-science data.  The operation and development of Data Stewardship Wizard is supported by ELIXIR CZ research infrastructure (MŠMT Grant No.: [LM2018131](https://starfos.tacr.cz/en/project/LM2018131)).
+We acknowledge funding from European Commission under contracts [824087](https://doi.org/10.3030/824087) (EOSC-Life), [101046203](https://doi.org/10.3030/101046203) (BY-COVID), [101057388](https://doi.org/10.3030/101057388) (EuroScienceGateway). The Biohackathon was supported by [ELIXIR](https://elixir-europe.org/), the research infrastructure for life-science data. The operation and development of Data Stewardship Wizard is supported by ELIXIR CZ research infrastructure (MŠMT Grant No.: [LM2018131](https://starfos.tacr.cz/en/project/LM2018131)).
 
 ## References

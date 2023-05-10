@@ -153,7 +153,7 @@ _From final reporting session presented on Friday 11 Nov 2022._
 - DSW: express potential future actions (e.g. submitted Grants)
 - Improve RO-Crate profile documentation – what is the thinking process for extending RO-Crate?
 - runcrate: refactor, expand, document – use from wf engines 
-- Started draft BioHackrXiv – but when to finish it??
+- Started draft BioHackrXiv
 
 ## runcrate
 
